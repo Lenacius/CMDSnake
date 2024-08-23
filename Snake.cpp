@@ -11,6 +11,10 @@ void Snake::initialize() {
 }
 
 void Snake::main_loop() {
+	for (int x = 0; x < 100; x++) {
+		snake->update();
+		Sleep(1000);
+	}
 	game_status = GameStatus::END;
 }
 

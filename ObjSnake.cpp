@@ -35,3 +35,42 @@ void ObjSnake::render(){
 		Renderer::render_at_position(part.x, part.y, texture);
 	}
 }
+
+void ObjSnake::update() {
+	this->clear_track();
+
+	Vector2 previous_part;
+	for (vector<Vector2>::iterator part = body.begin(); part != body.end(); part++) {
+		if ((*part) != (*head)) {
+			Vector2 aux = previous_part;
+			previous_part = (*part);
+			(*part) = aux;
+		}
+		else {
+			previous_part = (*head);
+			switch (direction) {
+				case Direction::UP:
+					head->y--;
+					break;
+				case Direction::DOWN:
+					head->y++;
+					break;
+				case Direction::RIGHT:
+					head->x++;
+					break;
+				case Direction::LEFT:
+					head->x--;
+					break;
+				default:
+					break;
+			}
+		}
+	}
+
+	this->render();
+}
+
+void ObjSnake::clear_track() {
+	Vector2 last_part = body.back();
+	Renderer::render_at_position(last_part.x, last_part.y, ' ');
+}

@@ -129,11 +129,17 @@
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ObjBoard.cpp" />
+    <ClCompile Include="ObjSnake.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Snake.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Vector2.h" />
+    <ClInclude Include="ObjBoard.h" />
+    <ClInclude Include="ObjSnake.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Snake.h" />
   </ItemGroup>

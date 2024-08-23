@@ -4,10 +4,18 @@
 
 using namespace std;
 
+struct Vector2 {
+	int x;
+	int y;
+	Vector2(int x, int y) {
+		this->x = x;
+		this->y = y;
+	}
+};
+
 class Snake : public Game {
 private:
-	int board_size_x;
-	int board_size_y;
+	Vector2 board_size;
 
 protected:
 	void initialize() override;

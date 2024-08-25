@@ -12,6 +12,7 @@ protected:
 
 	virtual void initialize() = 0;
 	virtual void main_loop() = 0;
+	virtual void capture_input() = 0;
 	virtual void finish() = 0;
 
 public:

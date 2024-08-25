@@ -4,6 +4,7 @@
 #include "Vector2.h"
 #include "ObjBoard.h"
 #include "ObjSnake.h"
+#include <conio.h>
 
 using namespace std;
 
@@ -15,6 +16,7 @@ private:
 protected:
 	void initialize() override;
 	void main_loop() override;
+	void capture_input() override;
 	void finish() override;
 
 public:

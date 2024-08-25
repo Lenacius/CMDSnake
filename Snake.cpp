@@ -11,11 +11,33 @@ void Snake::initialize() {
 }
 
 void Snake::main_loop() {
-	for (int x = 0; x < 100; x++) {
-		snake->update();
-		Sleep(1000);
+	snake->update();
+	Sleep(1000);
+}
+
+void Snake::capture_input() {
+	if (_kbhit()) {
+		char key_pressed = _getch();
+
+		if (key_pressed == 'q')
+			game_status = GameStatus::END;
+
+		ObjSnake* aux = dynamic_cast<ObjSnake*>(snake);
+		switch (key_pressed) {
+			case 'a':
+				aux->change_direction(Direction::LEFT);
+				break;
+			case 's':
+				aux->change_direction(Direction::DOWN);
+				break;
+			case 'd':
+				aux->change_direction(Direction::RIGHT);
+				break;
+			case 'w':
+				aux->change_direction(Direction::UP);
+		}
+
 	}
-	game_status = GameStatus::END;
 }
 
 void Snake::finish() {

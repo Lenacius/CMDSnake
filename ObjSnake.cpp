@@ -74,3 +74,7 @@ void ObjSnake::clear_track() {
 	Vector2 last_part = body.back();
 	Renderer::render_at_position(last_part.x, last_part.y, ' ');
 }
+
+void ObjSnake::change_direction(Direction new_direction) {
+	direction = new_direction;
+}

@@ -32,4 +32,6 @@ public:
 	void clear_track();
 	void render() override;
 	void update() override;
+
+	void change_direction(Direction new_direction);
 };

@@ -76,5 +76,11 @@ void ObjSnake::clear_track() {
 }
 
 void ObjSnake::change_direction(Direction new_direction) {
+	if ((direction == Direction::UP and new_direction == Direction::DOWN) or
+		(direction == Direction::DOWN and new_direction == Direction::UP) or
+		(direction == Direction::LEFT and new_direction == Direction::RIGHT) or
+		(direction == Direction::RIGHT and new_direction == Direction::LEFT))
+		return;
+
 	direction = new_direction;
 }

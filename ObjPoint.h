@@ -21,6 +21,6 @@ public:
 
 	void render() override;
 	bool check_collision_with(ObjSnake* snake);
-	void randomize_new_position(ObjBoard* board);
+	void randomize_new_position(ObjBoard* board, ObjSnake* snake);
 };
 

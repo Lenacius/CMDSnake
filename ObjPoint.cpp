@@ -29,8 +29,19 @@ bool ObjPoint::check_collision_with(ObjSnake* snake) {
 	return false;
 }
 
-void ObjPoint::randomize_new_position(ObjBoard* board) {
-	Vector2 dimensions = board->get_dimensions();
-	position.x = 1 + rand() % dimensions.x;
-	position.y = 1 + rand() % dimensions.y;
+void ObjPoint::randomize_new_position(ObjBoard* board, ObjSnake* snake) {
+	vector<Vector2> snake_body = snake->get_positions();
+	bool new_position_found = false;
+	while (!new_position_found) {
+		Vector2 dimensions = board->get_dimensions();
+		position.x = 1 + rand() % dimensions.x;
+		position.y = 1 + rand() % dimensions.y;
+
+		new_position_found = true;
+
+		for (Vector2 part : snake_body) {
+			if (part == position)
+				new_position_found = false;
+		}
+	}
 }

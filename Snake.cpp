@@ -15,7 +15,7 @@ void Snake::initialize() {
 void Snake::main_loop() {
 	snake->update();
 	if (point->check_collision_with(snake)) {
-		point->randomize_new_position(board);
+		point->randomize_new_position(board, snake);
 		point->render();
 	}
 	Sleep(1000);

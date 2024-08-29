@@ -14,10 +14,10 @@ ObjBoard::ObjBoard(Vector2 dimensions, char texture) {
 }
 
 void ObjBoard::render() {
-	for (int x = 0; x < dimensions.x; x++) {
-		for (int y = 0; y < dimensions.y; y++) {
-			if ((y == 0 or y == dimensions.y - 1)
-				or (x == 0 or x == dimensions.x - 1)) {
+	for (int x = 0; x < dimensions.x + 2; x++) {
+		for (int y = 0; y < dimensions.y + 2; y++) {
+			if ((y == 0 or y == dimensions.y + 1)
+				or (x == 0 or x == dimensions.x + 1)) {
 				Renderer::render_at_position(x, y, texture);
 			}
 		}

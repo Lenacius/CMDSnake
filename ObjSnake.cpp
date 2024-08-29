@@ -88,3 +88,7 @@ void ObjSnake::change_direction(Direction new_direction) {
 Vector2 ObjSnake::get_head_position() {
 	return *head;
 }
+
+vector<Vector2> ObjSnake::get_positions() {
+	return body;
+}

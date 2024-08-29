@@ -35,4 +35,5 @@ public:
 
 	void change_direction(Direction new_direction);
 	Vector2 get_head_position();
+	vector<Vector2> get_positions();
 };

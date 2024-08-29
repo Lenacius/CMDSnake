@@ -13,4 +13,5 @@ public:
 	ObjBoard(Vector2 dimensions, char texture);
 
 	void render() override;
+	Vector2 get_dimensions();
 };

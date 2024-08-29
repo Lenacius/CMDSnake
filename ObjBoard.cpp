@@ -23,3 +23,7 @@ void ObjBoard::render() {
 		}
 	}
 }
+
+Vector2 ObjBoard::get_dimensions() {
+	return dimensions;
+}

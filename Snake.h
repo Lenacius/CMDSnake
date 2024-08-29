@@ -4,14 +4,16 @@
 #include "Vector2.h"
 #include "ObjBoard.h"
 #include "ObjSnake.h"
+#include "ObjPoint.h"
 #include <conio.h>
 
 using namespace std;
 
 class Snake : public Game {
 private:
-	GameObject* board;
-	GameObject* snake;
+	ObjBoard* board;
+	ObjSnake* snake;
+	ObjPoint* point;
 
 protected:
 	void initialize() override;

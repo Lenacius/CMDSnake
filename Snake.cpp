@@ -3,15 +3,21 @@
 Snake::Snake() {
 	board = new ObjBoard(Vector2(10, 10), 'X');
 	snake = new ObjSnake('O');
+	point = new ObjPoint(Vector2(5, 6), '*');
 }
 
 void Snake::initialize() {
 	snake->render();
 	board->render();
+	point->render();
 }
 
 void Snake::main_loop() {
 	snake->update();
+	if (point->check_collision_with(snake)) {
+		point->randomize_new_position(board);
+		point->render();
+	}
 	Sleep(1000);
 }
 
@@ -22,19 +28,18 @@ void Snake::capture_input() {
 		if (key_pressed == 'q')
 			game_status = GameStatus::END;
 
-		ObjSnake* aux = dynamic_cast<ObjSnake*>(snake);
 		switch (key_pressed) {
 			case 'a':
-				aux->change_direction(Direction::LEFT);
+				snake->change_direction(Direction::LEFT);
 				break;
 			case 's':
-				aux->change_direction(Direction::DOWN);
+				snake->change_direction(Direction::DOWN);
 				break;
 			case 'd':
-				aux->change_direction(Direction::RIGHT);
+				snake->change_direction(Direction::RIGHT);
 				break;
 			case 'w':
-				aux->change_direction(Direction::UP);
+				snake->change_direction(Direction::UP);
 		}
 
 	}

@@ -66,6 +66,11 @@ void ObjSnake::update() {
 			}
 		}
 	}
+	if (increased) {
+		increased = false;
+		body.push_back(Vector2(previous_part.x, previous_part.y));
+		head = &body.front();
+	}
 
 	this->render();
 }
@@ -91,4 +96,8 @@ Vector2 ObjSnake::get_head_position() {
 
 vector<Vector2> ObjSnake::get_positions() {
 	return body;
+}
+
+void ObjSnake::increase() {
+	increased = true;
 }

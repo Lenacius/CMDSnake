@@ -22,6 +22,7 @@ private:
 	vector<Vector2> body;
 	Vector2* head;
 	Direction direction = Direction::RIGHT;
+	bool increased = false;
 
 public:
 	ObjSnake();
@@ -36,4 +37,5 @@ public:
 	void change_direction(Direction new_direction);
 	Vector2 get_head_position();
 	vector<Vector2> get_positions();
+	void increase();
 };

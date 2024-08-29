@@ -23,8 +23,10 @@ void ObjPoint::render() {
 }
 
 bool ObjPoint::check_collision_with(ObjSnake* snake) {
-	if (snake->get_head_position() == position)
+	if (snake->get_head_position() == position) {
+		snake->increase();
 		return true;
+	}
 
 	return false;
 }

@@ -41,7 +41,7 @@ void ObjSnake::update() {
 
 	Vector2 previous_part;
 	for (vector<Vector2>::iterator part = body.begin(); part != body.end(); part++) {
-		if ((*part) != (*head)) {
+		if (part != body.begin()) {
 			Vector2 aux = previous_part;
 			previous_part = (*part);
 			(*part) = aux;
@@ -100,4 +100,16 @@ vector<Vector2> ObjSnake::get_positions() {
 
 void ObjSnake::increase() {
 	increased = true;
+}
+
+bool ObjSnake::check_self_collision() {
+	for (vector<Vector2>::iterator part = body.begin()+1; part != body.end(); part++) {
+		if ((*part) == (*head)) {
+			return true;
+		}
+		else
+			continue;
+	}
+
+	return false;
 }

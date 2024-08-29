@@ -38,4 +38,5 @@ public:
 	Vector2 get_head_position();
 	vector<Vector2> get_positions();
 	void increase();
+	bool check_self_collision();
 };

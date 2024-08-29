@@ -14,11 +14,13 @@ void Snake::initialize() {
 
 void Snake::main_loop() {
 	snake->update();
+	if (snake->check_self_collision())
+		game_status = GameStatus::END;
 	if (point->check_collision_with(snake)) {
 		point->randomize_new_position(board, snake);
 		point->render();
 	}
-	Sleep(1000);
+	Sleep(250);
 }
 
 void Snake::capture_input() {

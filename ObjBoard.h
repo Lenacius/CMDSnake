@@ -2,6 +2,7 @@
 #include "GameObject.h"
 #include "Vector2.h"
 #include "Renderer.h"
+#include "ObjSnake.h"
 
 class ObjBoard : public GameObject {
 private:
@@ -14,4 +15,6 @@ public:
 
 	void render() override;
 	Vector2 get_dimensions();
+
+	bool check_collision_with(ObjSnake* snake);
 };

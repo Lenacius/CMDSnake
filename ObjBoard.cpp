@@ -27,3 +27,11 @@ void ObjBoard::render() {
 Vector2 ObjBoard::get_dimensions() {
 	return dimensions;
 }
+
+bool ObjBoard::check_collision_with(ObjSnake* snake) {
+	Vector2 snake_head = snake->get_head_position();
+	if (snake_head.x == 0 or snake_head.x == dimensions.x+1 or snake_head.y == 0 or snake_head.y == dimensions.y+1)
+		return true;
+	
+	return false;
+}

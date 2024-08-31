@@ -20,7 +20,7 @@ void Snake::main_loop() {
 		point->randomize_new_position(board, snake);
 		point->render();
 	}
-	Sleep(250);
+	Sleep(GAME_SPEED); // the lower the fastest
 }
 
 void Snake::capture_input() {
@@ -43,10 +43,9 @@ void Snake::capture_input() {
 			case 'w':
 				snake->change_direction(Direction::UP);
 		}
-
 	}
 }
 
 void Snake::finish() {
-
+	Renderer::render_at_position(0, board->get_dimensions().y + 1, '\n');
 }

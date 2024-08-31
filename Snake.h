@@ -14,6 +14,7 @@ private:
 	ObjBoard* board;
 	ObjSnake* snake;
 	ObjPoint* point;
+	const int GAME_SPEED = 250;
 
 protected:
 	void initialize() override;
